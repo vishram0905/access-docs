@@ -1,0 +1,84 @@
+site_name: ACCESS
+site_description: >-
+  AI-Curated Constraint-Aware Eligibility & Scholarly Search: a multi-agent system that finds research funding a
+  researcher is eligible for, with every stated condition traced to the funder's own page.
+site_url: https://vishram0905.github.io/access-docs/
+repo_url: https://github.com/vishram0905/access-docs
+repo_name: access-docs
+copyright: GP8000 / GP8001 AI Literacy · Cohort C · Group 5
+
+theme:
+  name: material
+  language: en
+  font:
+    text: IBM Plex Sans
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+  icon:
+    logo: material/school-outline
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Documentation:
+      - documentation/index.md
+      - Literature review: documentation/literature.md
+      - "Layer 0 · Building the library": documentation/layer0.md
+      - "Layer 1 · Understanding the user": documentation/layer1.md
+      - "Layer 2 · Matching and eligibility": documentation/layer2.md
+      - "Layer 3 · Ranking and explanation": documentation/layer3.md
+      - Models and resources: documentation/models.md
+  - Results: results.md
+  - Glossary: glossary.md
+  - References: references.md
