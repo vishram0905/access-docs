@@ -40,3 +40,7 @@
 .analogy { color: var(--access-muted); font-style: italic; }
 
 .qr { max-width: 220px; }
+
+/* Glossary: terms bold, definitions regular */
+.md-typeset dl dt { font-weight: 700; }
+.md-typeset dl dd { font-weight: 400; }
