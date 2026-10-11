@@ -80,5 +80,6 @@ nav:
       - "Layer 3 · Ranking and explanation": documentation/layer3.md
       - Models and resources: documentation/models.md
   - Results: results.md
+  - Test report: test-report.md
   - Glossary: glossary.md
   - References: references.md
