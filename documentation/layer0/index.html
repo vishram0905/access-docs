@@ -1,0 +1,1405 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI-Curated Constraint-Aware Eligibility & Scholarly Search: a multi-agent system that finds research funding a researcher is eligible for, with every stated condition traced to the funder's own page.">
+      
+      
+      
+        <link rel="canonical" href="https://vishram0905.github.io/access-docs/documentation/layer0/">
+      
+      
+        <link rel="prev" href="../literature/">
+      
+      
+        <link rel="next" href="../layer1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Layer 0 · Building the library - ACCESS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#layer-0-building-the-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACCESS" class="md-header__button md-logo" aria-label="ACCESS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACCESS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Layer 0 · Building the library
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vishram0905/access-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    access-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../results/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Results
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACCESS" class="md-nav__button md-logo" aria-label="ACCESS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    ACCESS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vishram0905/access-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    access-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 0 · Building the library
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 0 · Building the library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-funnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The funnel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-harvester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · Harvester
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-normalizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Normalizer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 · Normalizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-host-country-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The host-country field
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-info-critic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · Info Critic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 · Info Critic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-wording-effect-measured-with-a-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A wording effect, measured with a control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trust-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trust score
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-auditor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · Auditor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sentinel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · Sentinel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-vector-index-and-rule-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library: vector index and rule register
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 1 · Understanding the user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 2 · Matching and eligibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 3 · Ranking and explanation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models and resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-funnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The funnel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-harvester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · Harvester
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-normalizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Normalizer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 · Normalizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-host-country-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The host-country field
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-info-critic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · Info Critic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 · Info Critic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-wording-effect-measured-with-a-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A wording effect, measured with a control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trust-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trust score
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-auditor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · Auditor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sentinel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · Sentinel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-vector-index-and-rule-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library: vector index and rule register
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="layer-0-building-the-library">Layer 0 · Building the library<a class="headerlink" href="#layer-0-building-the-library" title="Permanent link">&para;</a></h1>
+<p>Layer 0 runs offline and continuously. It turns web pages into <strong>verified programme records</strong>: structured
+descriptions of funding programmes in which every displayed fact has been checked against the funder's own page.
+Because it runs in the background, slow and careful verification never delays a user's search.</p>
+<div class="flow">
+<div class="step"><strong>1 · Harvester</strong>Finds and fetches funder pages; discards irrelevant ones cheaply</div>
+<div class="step"><strong>2 · Normalizer</strong>Extracts each programme into a fixed schema, with a quote per fact</div>
+<div class="step hot"><strong>3 · Info Critic</strong>Verifies each fact with a three-company judge panel</div>
+<div class="step"><strong>4 · Library</strong>Vector index (meaning) and rule register (eligibility rules)</div>
+</div>
+<p>The <strong>Auditor</strong> tests the Info Critic with planted errors, and the <strong>Sentinel</strong> monitors the whole pipeline.</p>
+<h2 id="the-funnel">The funnel<a class="headerlink" href="#the-funnel" title="Permanent link">&para;</a></h2>
+<div class="bars">
+<div class="row"><span>Pages fetched</span><div class="track"><div class="fill" style="width:100%"></div>
+</div>
+<p><span class="val">92,016</span></div></p>
+<div class="row"><span>Programme records extracted</span><div class="track"><div class="fill" style="width:14%"></div></div><span class="val">1,207</span></div>
+<div class="row"><span>Fully verified</span><div class="track"><div class="fill alt" style="width:4.5%"></div></div><span class="val">370</span></div>
+<div class="caption">From 6,467 websites, as of 12 October 2026. Bars are not to scale. Of the extracted records, 252 have at least one claim withheld and 585 are still waiting for the claim check.</div>
+</div>
+<p>Most fetched pages are not funding programmes (27,496) or are duplicates (6,025). About 18,900 further candidate pages
+are waiting to be read by the Normalizer. <strong>We chose to verify existing records before extracting more</strong>: a
+smaller library in which every row is checked is more useful than a larger one that cannot be trusted.</p>
+<hr />
+<h2 id="1-harvester">1 · Harvester<a class="headerlink" href="#1-harvester" title="Permanent link">&para;</a></h2>
+<p><strong>What it does.</strong> Finds funding websites, fetches their pages, renders pages that are built by JavaScript, and keeps
+pages that look like a single funding programme.</p>
+<p><strong>Method.</strong></p>
+<ul>
+<li><em>Prioritised sources.</em> National and government scholarship schemes first, then universities in ranking order (QS
+  World University Rankings 2026), starting from each university's central scholarships page. Within the priority
+  countries, the country with the fewest verified programmes is served next, so a large queue for one country cannot
+  starve another (<em>max-min fairness</em>).</li>
+<li><em>Polite crawling.</em> <abbr title="A website's statement of which pages automated programs may visit">robots.txt</abbr> is respected, one request per website at a time, with delays and back-off. Sites that
+  block automated access are read from the Internet Archive instead, labelled with the snapshot date; protection is
+  never circumvented.</li>
+<li><em>A free keyword filter</em> scores each page before any language model sees it. This is the cascade principle: the
+  model quota is the scarcest resource.</li>
+<li><em>Duplicate detection</em> by a fingerprint of each page's text (SHA-256 hash).</li>
+<li><em>A headless browser</em> (Playwright) renders pages whose content only appears after JavaScript runs.</li>
+</ul>
+<p><strong>Why this method.</strong> The state of the art for targeted crawling is <em>focused crawling</em> with a learned link classifier.
+We did not use it: it needs labelled training links, and the bottleneck is the extraction quota, not crawling, so a
+smarter crawler would not increase the number of verified records per day.</p>
+<p><strong>Evidence</strong> (crawl log, one row per request, 7 October):</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fetched successfully</td>
+<td>72% of 84,415 requests</td>
+</tr>
+<tr>
+<td>Skipped because <abbr title="A website's statement of which pages automated programs may visit">robots.txt</abbr> disallows</td>
+<td>501 requests</td>
+</tr>
+<tr>
+<td>Pages passed to the Normalizer that were real programmes (precision)</td>
+<td>67% (1,762 of 2,612)</td>
+</tr>
+<tr>
+<td>…that were index pages listing programmes (used for their links)</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>…that were irrelevant</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>Real programmes the filter discarded (miss rate), random sample of 60</td>
+<td>10% (95% <abbr title="Confidence interval">CI</abbr> 5–20%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where it fails.</strong> The filter misses about one programme page in ten. Of the six misses in the sample, two scored just
+under the threshold, two were not in English, and two were old news items. Adding foreign-language keywords rescued
+none of the six and let three irrelevant pages through, so it was reverted: the misses fail on page structure, not
+vocabulary. Lowering the threshold would raise recall, but recall is not the bottleneck while thousands of pages wait
+for extraction.</p>
+<hr />
+<h2 id="2-normalizer">2 · Normalizer<a class="headerlink" href="#2-normalizer" title="Permanent link">&para;</a></h2>
+<p><strong>What it does.</strong> A language model reads each candidate page and fills a <strong>fixed schema</strong> of about 50 typed fields:
+programme type, career levels, host country, deadline, amount, coverage of tuition and travel, and eligibility rules.</p>
+<p><strong>Method.</strong> <em><abbr title="Doing a task from instructions alone, without worked examples">Zero-shot</abbr>, schema-constrained information extraction</em> with Google Gemini. "<abbr title="Doing a task from instructions alone, without worked examples">Zero-shot</abbr>" means the model is
+given instructions and the schema, but no training examples. Each eligibility rule is stored as a typed triple, for
+example <code>nationality in [Singapore, Singapore PR]</code>, marked as hard or soft, and every field must carry a
+<strong>word-for-word quote</strong> from the page. The quote is what later makes the fact checkable.</p>
+<p><strong>Example of a verified record</strong> (LKY-STEP Award, Singapore):</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Quote from the page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nationality</td>
+<td>Singapore citizen or permanent resident</td>
+<td>"Be Singapore Citizens or Singapore Permanent Residents."</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>3,500 SGD, one-time</td>
+<td>"One-time cash award of S$3,500."</td>
+</tr>
+<tr>
+<td>Career level</td>
+<td>Undergraduate</td>
+<td>"Be matriculating into a full-time undergraduate degree course…"</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Each rule confirmed by 3 of 3 judges</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why this method.</strong> A fine-tuned extractor would need labelled training data, which does not exist for this task;
+hand-written parsers break across thousands of different site layouts. <abbr title="Doing a task from instructions alone, without worked examples">Zero-shot</abbr> extraction generalises across
+layouts with no training data.</p>
+<p><strong>Trade-off.</strong> The free tier allows roughly 500 pages per day, which is the main limit on throughput. A rule the page
+states but the model misses cannot be enforced; the Q&amp;A feature (Layer 3) can still surface it from the page text.</p>
+<h3 id="the-host-country-field">The host-country field<a class="headerlink" href="#the-host-country-field" title="Permanent link">&para;</a></h3>
+<p>Originally, programmes held in more than one country were labelled with a single value, "Multiple". Search treated
+this as a wildcard, so such programmes appeared under <strong>every</strong> country filter. The field now holds an explicit list
+of countries or regions, a flag for programmes open to any destination, and a supporting quote, all verified like any
+other claim. A list the judges cannot confirm becomes "not stated", which remains visible to every search rather than
+hiding the programme. The effect on a search for Japan: about 156 results before, 94 after.</p>
+<hr />
+<h2 id="3-info-critic">3 · Info Critic<a class="headerlink" href="#3-info-critic" title="Permanent link">&para;</a></h2>
+<p><strong>What it does.</strong> Decides what a user is allowed to see. It verifies each record in two stages and publishes only
+records whose displayed facts are all confirmed.</p>
+<p><strong>Method.</strong></p>
+<div class="flow">
+<div class="step"><strong>A · Whole record</strong>Three judges: is this page a funding programme, and does the record describe it?</div>
+<div class="step"><strong>B1 · Locate</strong>Code finds each claim's quote, date or amount on the page. Not found means not confirmed, at zero model cost.</div>
+<div class="step"><strong>B2 · Interpret</strong>Three judges see only the located passage and vote on one claim at a time.</div>
+<div class="step hot"><strong>C · Decide</strong>A majority confirms: the claim is shown. Otherwise it is withheld as "not stated".</div>
+</div>
+<p>The claims checked are each eligibility rule, the deadline, the amount, "fully funded", the programme type and the
+host country. A record is <strong>verified</strong> only if every claim it shows is confirmed and at least one eligibility rule is
+confirmed.</p>
+<ul>
+<li><em>An ensemble of heterogeneous judges.</em> The judge pool holds six models from six companies (OpenAI, Alibaba, NVIDIA,
+  Zhipu, Microsoft and Meta). Each record is judged by three of them, from three different companies, and never by the
+  extractor's company (Google). A record is never decided by fewer than three judges; it waits.</li>
+<li><em>Claim decomposition</em>, following FActScore <a href="../../references/">[9]</a>: a whole-record verdict hides which part is
+  wrong, so each claim is checked separately.</li>
+<li><em>Locate, then interpret.</em> For dates and amounts, exact matching on the page is free and more reliable than a
+  model's reading, so it runs first. The judges then answer a narrow question about one passage, with known traps
+  listed (for example, an intake date is not a deadline; a range is not a single value).</li>
+</ul>
+<p><strong>Why this method.</strong> A single strong judge is cheaper but shows known biases <a href="../../references/">[4]</a>,
+<a href="../../references/">[12]</a>. A majority vote outperforms its members only if their errors are independent (Condorcet's
+jury theorem); judges from different companies are less likely to share blind spots <a href="../../references/">[11]</a>.</p>
+<p><strong>Evidence.</strong></p>
+<ul>
+<li><em>Agreement between judges:</em> Fleiss' <abbr title="Fleiss' kappa: agreement among raters, corrected for chance (0 = chance, 1 = perfect)">κ</abbr> = 0.51 over 1,888 rule judgements <a href="../../references/">[14]</a>, "moderate" on the
+  Landis and Koch scale <a href="../../references/">[15]</a>. Some disagreement is expected from independent judges; near-perfect
+  agreement would suggest an echo chamber.</li>
+<li><em>Why stage B was added:</em> measured on 575 records, whole-record judging was wrong in both directions. It marked 93% of
+  correct deadlines and 91% of correct amounts as unconfirmed, yet caught only 27% of planted deadline errors and 21% of
+  planted amount errors (see the Auditor below).</li>
+<li><em>Locate step, all records, no model cost:</em> true claims located: deadline 85%, amount 92%, rule quote 98%. Planted
+  wrong deadlines were located in only 0.5% of cases and inflated amounts in 0%, so they are caught before any judge reads them.</li>
+</ul>
+<p><strong>Trade-offs.</strong> Three extra short judge calls per record mean about 40% fewer records verified per day on free quota.
+Exact matching can miss a true value written in an unusual format; the cost is a withheld claim, never a wrong one shown.</p>
+<h3 id="a-wording-effect-measured-with-a-control">A wording effect, measured with a control<a class="headerlink" href="#a-wording-effect-measured-with-a-control" title="Permanent link">&para;</a></h3>
+<p>Judges rejected correct amounts when the claim said "the programme pays X" and the page said "up to X". After the claim
+was reworded to accept a stated maximum, <strong>35 of 44</strong> previously rejected amounts were confirmed. Because loosening a
+check could also let wrong values through, we ran a <strong>negative control</strong>: deliberately wrong amounts on the same pages.
+Only <strong>1 of 28</strong> was accepted, and that value matched a real award tier on the page.</p>
+<h3 id="trust-score">Trust score<a class="headerlink" href="#trust-score" title="Permanent link">&para;</a></h3>
+<p>Each verified record also receives a transparent trust score: a weighted sum of source authenticity (0.25), funding
+vote (0.20), rule support (0.20), grounding of quotes (0.20), judge agreement (0.10) and validation checks (0.05).
+The weights are expert choices, not learned, because no labelled outcomes existed at design time. The Auditor's test
+results provide labelled data from which the weights could later be learned.</p>
+<hr />
+<h2 id="4-auditor">4 · Auditor<a class="headerlink" href="#4-auditor" title="Permanent link">&para;</a></h2>
+<p><strong>What it does.</strong> Measures the Info Critic instead of trusting it.</p>
+<p><strong>Method.</strong> <em>Fault injection</em>, also known as mutation testing <a href="../../references/">[16]</a>: take a verified record, insert
+one known error, and run it through verification exactly as deployed. Because the location of the error is known,
+the detection rate can be measured directly. Five error types are planted: an invented eligibility rule, a flipped
+nationality rule ("open to" ↔ "not open to"), a deadline shifted by months, an amount multiplied by four, and a record
+paired with another programme's page. The Auditor also re-reads random pages blind and compares its extraction with
+the stored record. It is never one of the judges whose work it tests.</p>
+<p><strong>Evidence: whole-record panel alone, 768 planted errors.</strong></p>
+<div class="bars">
+<div class="row"><span>Invented rule</span><div class="track"><div class="fill" style="width:100%"></div>
+</div>
+<p><span class="val">100%</span></div></p>
+<div class="row"><span>Wrong page</span><div class="track"><div class="fill" style="width:98%"></div></div><span class="val">98%</span></div>
+<div class="row"><span>Flipped nationality</span><div class="track"><div class="fill alt" style="width:51%"></div></div><span class="val">51%</span></div>
+<div class="row"><span>Shifted deadline</span><div class="track"><div class="fill alt" style="width:27%"></div></div><span class="val">27%</span></div>
+<div class="row"><span>Amount ×4</span><div class="track"><div class="fill alt" style="width:21%"></div></div><span class="val">21%</span></div>
+<div class="caption">Share of planted errors caught. The panel reliably rejects invented content but often misses subtle changes, which motivated the claim-by-claim check.</div>
+</div>
+<p>The Auditor now tests the full verification process (panel and claim check together). In a pilot, the claim check
+caught 4 of 4 flipped nationality rules. Full-process detection rates per error type are still accumulating.</p>
+<p><strong>A bug found by the test itself.</strong> The first full-process test reported a planted amount as "missed". Inspection
+showed that the panel had already removed the amount from the record in place, so the test compared the planted value
+with nothing. The test now compares against a snapshot taken before judging.</p>
+<hr />
+<h2 id="5-sentinel">5 · Sentinel<a class="headerlink" href="#5-sentinel" title="Permanent link">&para;</a></h2>
+<p>Monitors progress every five minutes. It diagnoses problems with fixed rules first, and lets a language model choose
+only from a whitelist of safe actions: restart an agent, rest a failing model, change the number of workers. A health
+audit found that provider outages had been counted against the pages themselves, silently retiring 15,729 of 15,731
+queued pages; provider failures now pause the work instead.</p>
+<hr />
+<h2 id="library-vector-index-and-rule-register">Library: vector index and rule register<a class="headerlink" href="#library-vector-index-and-rule-register" title="Permanent link">&para;</a></h2>
+<p>Verified records are published into two stores.</p>
+<ul>
+<li><strong>Vector index.</strong> Each programme is converted into an <abbr title="A list of numbers representing the meaning of a text">embedding</abbr> with <code>nomic-embed-text</code> <a href="../../references/">[19]</a>,
+  run locally, and searched exhaustively by cosine similarity. Approximate indexes (such as HNSW) pay off only at
+  around 100,000 vectors; at a few thousand programmes, exhaustive search takes milliseconds.</li>
+<li><strong>Rule register.</strong> A typed store of eligibility rules (attribute, operator, value, hard or soft, quote, judge votes)
+  that the eligibility gate evaluates in Layer 2.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../literature/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Literature review">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Literature review
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../layer1/" class="md-footer__link md-footer__link--next" aria-label="Next: Layer 1 · Understanding the user">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Layer 1 · Understanding the user
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GP8000 / GP8001 AI Literacy · Cohort C · Group 5
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

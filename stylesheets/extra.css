@@ -1,0 +1,42 @@
+:root {
+  --md-primary-fg-color: #2F6690;
+  --md-primary-fg-color--light: #5F8DB3;
+  --md-primary-fg-color--dark: #1B2A3A;
+  --md-accent-fg-color: #C8642B;
+  --access-orange: #C8642B;
+  --access-blue: #2F6690;
+  --access-card: #FFFFFF;
+  --access-border: #DCDFE2;
+  --access-muted: #4A5568;
+}
+[data-md-color-scheme="slate"] {
+  --access-card: #1E2633;
+  --access-border: #2E3A4A;
+  --access-muted: #B9C3CE;
+}
+
+/* Headline numbers */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.kpi { background: var(--access-card); border: 1px solid var(--access-border); border-radius: 12px; padding: 1rem 1.2rem; }
+.kpi .num { font-size: 2.2rem; font-weight: 600; color: var(--access-orange); line-height: 1.1; }
+.kpi .lbl { font-size: .8rem; color: var(--access-muted); margin-top: .3rem; }
+
+/* Horizontal bar charts */
+.bars { margin: 1rem 0 1.5rem; }
+.bars .row { display: grid; grid-template-columns: minmax(120px, 30%) 1fr 3.5rem; align-items: center; gap: .6rem; margin: .35rem 0; font-size: .8rem; }
+.bars .track { background: rgba(127, 127, 127, .12); border-radius: 4px; height: 1.1rem; }
+.bars .fill { background: var(--access-blue); height: 100%; border-radius: 4px; }
+.bars .fill.alt { background: var(--access-orange); }
+.bars .val { font-weight: 600; text-align: right; }
+.bars .caption { font-size: .75rem; color: var(--access-muted); margin-top: .4rem; }
+
+/* Pipeline cards */
+.flow { display: flex; flex-wrap: wrap; gap: .6rem; align-items: stretch; margin: 1rem 0; }
+.flow .step { flex: 1 1 150px; background: var(--access-card); border: 1px solid var(--access-border); border-top: 4px solid var(--access-blue); border-radius: 10px; padding: .7rem .9rem; font-size: .8rem; }
+.flow .step.hot { border-top-color: var(--access-orange); }
+.flow .step strong { display: block; font-size: .9rem; margin-bottom: .2rem; }
+
+/* Analogy callouts in the glossary */
+.analogy { color: var(--access-muted); font-style: italic; }
+
+.qr { max-width: 220px; }
