@@ -29,6 +29,8 @@ researcher is eligible for, ranked by fit and with the evidence for each decisio
 
 ## The idea in one picture
 
+<div class="diagram" markdown>
+
 ```mermaid
 flowchart LR
   subgraph OFF["Offline: runs continuously"]
@@ -42,6 +44,9 @@ flowchart LR
   L0 --> L2
   L1 --> L2 --> L3
 ```
+
+</div>
+<p class="swipe-hint">Swipe sideways to see the whole diagram.</p>
 
 The design rests on one division of labour: **language models read; deterministic code decides.** Models are good at
 reading messy web pages and judging whether a sentence supports a claim. Code is better at decisions that must be

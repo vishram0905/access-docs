@@ -25,6 +25,8 @@ ACCESS is a **neuro-symbolic, multi-agent workflow**. Language models read, judg
 searches, decides eligibility and scores. No model is trained: all models are pretrained and used through prompts or
 embeddings, on free tiers or run locally.
 
+<div class="diagram wide" markdown>
+
 ```mermaid
 flowchart LR
   subgraph L0["Layer 0 · Build the library (offline)"]
@@ -50,6 +52,9 @@ flowchart LR
   G --> F
   NM --> S
 ```
+
+</div>
+<p class="swipe-hint">Swipe sideways to see the whole diagram.</p>
 
 ## Three design principles
 
