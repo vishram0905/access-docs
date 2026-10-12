@@ -44,3 +44,14 @@
 /* Glossary: terms bold, definitions regular */
 .md-typeset dl dt { font-weight: 700; }
 .md-typeset dl dd { font-weight: 400; }
+
+/* Phones: keep diagrams at a readable size and let them scroll sideways */
+.swipe-hint { display: none; }
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .diagram { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .md-typeset .diagram .mermaid { min-width: 640px; }
+  .md-typeset .diagram.wide .mermaid { min-width: 1000px; }
+  .md-typeset .swipe-hint { display: block; font-size: .7rem; color: var(--access-muted); margin-top: -.6rem; }
+  .md-typeset dl dd { margin-left: 1rem; }
+  .bars .row { grid-template-columns: minmax(96px, 34%) 1fr 2.6rem; }
+}

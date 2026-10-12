@@ -972,6 +972,7 @@ researcher is eligible for, ranked by fit and with the evidence for each decisio
 </div>
 <p><small>Figures as of 12 October 2026. See <a href="results/">Results</a>.</small></p>
 <h2 id="the-idea-in-one-picture">The idea in one picture<a class="headerlink" href="#the-idea-in-one-picture" title="Permanent link">&para;</a></h2>
+<div class="diagram">
 <pre class="mermaid"><code>flowchart LR
   subgraph OFF["Offline: runs continuously"]
     L0["&lt;b&gt;Layer 0 · Build the library&lt;/b&gt;&lt;br/&gt;crawl funder websites&lt;br/&gt;extract each programme&lt;br/&gt;verify every fact"]
@@ -983,6 +984,9 @@ researcher is eligible for, ranked by fit and with the evidence for each decisio
   end
   L0 --&gt; L2
   L1 --&gt; L2 --&gt; L3</code></pre>
+</div>
+<p class="swipe-hint">Swipe sideways to see the whole diagram.</p>
+
 <p>The design rests on one division of labour: <strong>language models read; deterministic code decides.</strong> Models are good at
 reading messy web pages and judging whether a sentence supports a claim. Code is better at decisions that must be
 reproducible and explainable, such as whether a researcher meets a nationality rule.</p>
