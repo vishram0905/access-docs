@@ -5,10 +5,13 @@ site_description: >-
 site_url: https://vishram0905.github.io/access-docs/
 repo_url: https://github.com/vishram0905/access-docs
 repo_name: access-docs
-copyright: GP8000 / GP8001 AI Literacy · Cohort C · Group 5
+copyright: >-
+  GP8000 / GP8001 AI Literacy · Cohort C · Group 5<br>
+  This site records anonymous visit counts (GoatCounter). No cookies are used and no personal data is stored.
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   font:
     text: IBM Plex Sans
