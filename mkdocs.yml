@@ -74,6 +74,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - About: about.md
   - Documentation:
       - documentation/index.md
       - Literature review: documentation/literature.md
