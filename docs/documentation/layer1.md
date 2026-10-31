@@ -9,13 +9,17 @@ flowchart LR
   F --> A["Eligibility attributes<br/>(for testing rules)"]
 ```
 
+!!! tip "The maths behind this layer"
+    Plain-language explanations, equations and worked examples: [embeddings](explained.md#1-turning-text-into-numbers-embeddings), [field inference](explained.md#4-guessing-research-fields-zero-shot-classification) and [the follow-up question](explained.md#6-one-follow-up-question-greedy-information-gain).
+
 ## Input form: consent and data minimisation
 
 **What it does.** Collects only what matching needs, after explicit consent.
 
 **Method.**
 
-- A consent box must be ticked before a search runs.
+- The form states, next to the search button, that answers are used only to find funding and that searches are
+  kept without a name to evaluate the system. Running a search signals consent.
 - Saved searches never store a personal name; they are kept only to evaluate the system.
 - A blank field means **unknown**, never "no" and never a default value. An early version used a default age of 25,
   which silently decided age rules for users who had never given an age; this was removed.
@@ -28,7 +32,7 @@ Personal Data Protection Act (PDPA).
 **What it does.** Converts the form into the two representations above.
 
 **Method.** Facts from the form are used unchanged. Research fields are inferred locally by *zero-shot embedding
-classification*: the description and 25 field labels are embedded, and every field within a small margin (0.035) of
+classification*: the description and 24 field labels are embedded, and every field within a small margin (0.035) of
 the best cosine score is kept. The user can confirm or override the inferred fields.
 
 **Why this method.** An earlier version used a cloud language model to build the profile, which made every search

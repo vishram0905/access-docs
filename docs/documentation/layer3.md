@@ -3,6 +3,9 @@
 Layer 3 orders the eligible programmes by fit and explains each result. It follows one user-experience principle:
 **answer first, then refine.**
 
+!!! tip "The maths behind this layer"
+    Plain-language explanations, equations and worked examples: [the fit score](explained.md#7-the-fit-score-late-fusion) and [retrieval-augmented generation](explained.md#12-answering-questions-from-the-official-page-retrieval-augmented-generation).
+
 <div class="flow" markdown>
 <div class="step"><strong>0.4 s · Instant results</strong>Search and eligibility gate. No cloud AI is involved, so results appear even if every model provider is down.</div>
 <div class="step"><strong>~15 s · Fit ranking</strong>In the background, a language model scores each eligible programme for fit and gives a reason.</div>

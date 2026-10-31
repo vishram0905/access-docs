@@ -175,3 +175,7 @@
 .video-caption { font-size: .74rem; color: var(--access-muted); margin-top: 0; }
 .about-cards { margin: 1rem 0 1.4rem; }
 .md-typeset .about-cards h3 { margin-top: 0; }
+
+/* Equations on the explainer page: wide display equations scroll inside their own box on narrow screens
+   instead of pushing the whole page sideways. */
+.md-typeset .katex-display { overflow-x: auto; overflow-y: hidden; padding: .2rem 0; }

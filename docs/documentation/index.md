@@ -7,6 +7,9 @@ This section describes ACCESS layer by layer. Each component is documented in th
 - **Why this method**: the alternatives considered, including the state of the art, and the trade-off we accepted.
 - **Evidence**: a measurement showing whether it works, and where it fails.
 
+New to the field? [How it works, explained](explained.md) introduces every method in plain language first, then
+with its equation and a worked example using the system's real numbers.
+
 ## Objectives
 
 ACCESS was designed around four objectives:

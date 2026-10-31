@@ -13,6 +13,9 @@ Because it runs in the background, slow and careful verification never delays a 
 
 The **Auditor** tests the Info Critic with planted errors, and the **Sentinel** monitors the whole pipeline.
 
+!!! tip "The maths behind this layer"
+    Plain-language explanations, equations and worked examples: [majority voting](explained.md#8-verifying-facts-with-a-jury-majority-voting), [Fleiss' kappa](explained.md#9-measuring-agreement-fleiss-kappa), [fault injection and confidence intervals](explained.md#10-testing-the-tester-fault-injection-and-confidence-intervals) and [the trust score](explained.md#13-the-trust-score-a-transparent-weighted-sum).
+
 ## The funnel
 
 <div class="bars" markdown>

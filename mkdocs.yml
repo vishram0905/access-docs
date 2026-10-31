@@ -46,6 +46,12 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
 
 markdown_extensions:
   - abbr
@@ -57,6 +63,8 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
@@ -77,6 +85,7 @@ nav:
   - About: about.md
   - Documentation:
       - documentation/index.md
+      - "How it works, explained": documentation/explained.md
       - Literature review: documentation/literature.md
       - "Layer 0 · Building the library": documentation/layer0.md
       - "Layer 1 · Understanding the user": documentation/layer1.md

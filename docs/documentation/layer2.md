@@ -4,6 +4,9 @@ Layer 2 answers two separate questions: *which programmes are relevant to this r
 the researcher eligible for?* The first is a search problem; the second is a logic problem. They are handled by
 different methods on purpose.
 
+!!! tip "The maths behind this layer"
+    Plain-language explanations, equations and worked examples: [BM25](explained.md#2-keyword-search-bm25), [rank fusion](explained.md#3-combining-two-rankings-reciprocal-rank-fusion), [the eligibility gate](explained.md#5-eligibility-as-logic-the-gate) and [recall@k and MRR](explained.md#11-how-search-quality-is-measured-recallk-and-mrr).
+
 ## Research matcher: hybrid search
 
 **What it does.** Retrieves the programmes most relevant to the researcher's interests from the whole library.
