@@ -5,7 +5,7 @@ hide:
 
 # Results
 
-All figures are a snapshot as of **12 October 2026**. The library grows continuously as verification proceeds.
+All figures are a snapshot as of **31 October 2026**. The library grows continuously as verification proceeds.
 
 ## What ACCESS can do today
 
@@ -14,8 +14,8 @@ the funder's own words, results are ranked by fit, deadlines are labelled as ope
 application plan or a cited answer to a question is available on request.
 
 <div class="kpis" markdown>
-<div class="kpi"><div class="num">370</div><div class="lbl">programmes with every displayed fact verified by a three-company panel</div></div>
-<div class="kpi"><div class="num">631</div><div class="lbl">eligibility rules, each linked to a quote on the funder's page</div></div>
+<div class="kpi"><div class="num">629</div><div class="lbl">programmes with every displayed fact verified by a three-company panel</div></div>
+<div class="kpi"><div class="num">1,009</div><div class="lbl">eligibility rules, each linked to a quote on the funder's page</div></div>
 <div class="kpi"><div class="num">0.4 s</div><div class="lbl">from clicking search to the first eligibility-filtered results</div></div>
 <div class="kpi"><div class="num">93%</div><div class="lbl">of benchmark searches find the target programme in the top five</div></div>
 <div class="kpi"><div class="num">24 / 24</div><div class="lbl">answers to applicant questions quote only what is on the page</div></div>
@@ -27,80 +27,73 @@ application plan or a cited answer to a question is available on request.
 === "By host country"
 
     <div class="bars" markdown>
-    <div class="row"><span>Singapore</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">77</span></div>
-    <div class="row"><span>United Kingdom</span><div class="track"><div class="fill" style="width:78%"></div></div><span class="val">60</span></div>
-    <div class="row"><span>United States</span><div class="track"><div class="fill" style="width:57%"></div></div><span class="val">44</span></div>
-    <div class="row"><span>Canada</span><div class="track"><div class="fill" style="width:44%"></div></div><span class="val">34</span></div>
-    <div class="row"><span>Several countries (being resolved)</span><div class="track"><div class="fill alt" style="width:42%"></div></div><span class="val">32</span></div>
-    <div class="row"><span>Not stated</span><div class="track"><div class="fill alt" style="width:38%"></div></div><span class="val">29</span></div>
-    <div class="row"><span>Japan</span><div class="track"><div class="fill" style="width:30%"></div></div><span class="val">23</span></div>
-    <div class="row"><span>Australia</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">20</span></div>
-    <div class="row"><span>Germany</span><div class="track"><div class="fill" style="width:10%"></div></div><span class="val">8</span></div>
-    <div class="row"><span>India</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="val">6</span></div>
-    <div class="row"><span>Israel</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="val">6</span></div>
-    <div class="row"><span>Any country</span><div class="track"><div class="fill" style="width:6%"></div></div><span class="val">5</span></div>
-    <div class="caption">Continental Europe is under-represented so far; national European schemes are the next priority.</div>
+    <div class="row"><span>United Kingdom</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">122</span></div>
+    <div class="row"><span>Singapore</span><div class="track"><div class="fill" style="width:64%"></div></div><span class="val">78</span></div>
+    <div class="row"><span>United States</span><div class="track"><div class="fill" style="width:51%"></div></div><span class="val">62</span></div>
+    <div class="row"><span>Germany</span><div class="track"><div class="fill" style="width:41%"></div></div><span class="val">50</span></div>
+    <div class="row"><span>Canada</span><div class="track"><div class="fill" style="width:29%"></div></div><span class="val">35</span></div>
+    <div class="row"><span>Japan</span><div class="track"><div class="fill" style="width:28%"></div></div><span class="val">34</span></div>
+    <div class="row"><span>Australia</span><div class="track"><div class="fill" style="width:25%"></div></div><span class="val">31</span></div>
+    <div class="row"><span>Hong Kong</span><div class="track"><div class="fill" style="width:10%"></div></div><span class="val">12</span></div>
     </div>
 
 === "By programme type"
 
     <div class="bars" markdown>
-    <div class="row"><span>Undergraduate scholarship</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">108</span></div>
-    <div class="row"><span>Master's scholarship</span><div class="track"><div class="fill" style="width:53%"></div></div><span class="val">57</span></div>
-    <div class="row"><span>PhD scholarship</span><div class="track"><div class="fill" style="width:48%"></div></div><span class="val">52</span></div>
-    <div class="row"><span>Research fellowship</span><div class="track"><div class="fill" style="width:42%"></div></div><span class="val">45</span></div>
-    <div class="row"><span>Research grant</span><div class="track"><div class="fill" style="width:38%"></div></div><span class="val">41</span></div>
-    <div class="row"><span>Travel / mobility grant</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">28</span></div>
-    <div class="row"><span>Postdoctoral fellowship</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">28</span></div>
-    <div class="row"><span>Research internship</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="val">9</span></div>
+    <div class="row"><span>Research grant</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">126</span></div>
+    <div class="row"><span>Undergraduate scholarship</span><div class="track"><div class="fill" style="width:93%"></div></div><span class="val">117</span></div>
+    <div class="row"><span>PhD scholarship</span><div class="track"><div class="fill" style="width:86%"></div></div><span class="val">108</span></div>
+    <div class="row"><span>Research fellowship</span><div class="track"><div class="fill" style="width:56%"></div></div><span class="val">70</span></div>
+    <div class="row"><span>Master's scholarship</span><div class="track"><div class="fill" style="width:52%"></div></div><span class="val">66</span></div>
+    <div class="row"><span>Postdoctoral fellowship</span><div class="track"><div class="fill" style="width:48%"></div></div><span class="val">60</span></div>
+    <div class="row"><span>Travel / mobility grant</span><div class="track"><div class="fill" style="width:37%"></div></div><span class="val">46</span></div>
+    <div class="row"><span>Award or prize</span><div class="track"><div class="fill" style="width:17%"></div></div><span class="val">22</span></div>
+    <div class="row"><span>Research internship</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="val">10</span></div>
+    <div class="row"><span>Industry fellowship</span><div class="track"><div class="fill" style="width:3%"></div></div><span class="val">4</span></div>
     </div>
 
 === "By career level"
 
     <div class="bars" markdown>
-    <div class="row"><span>Undergraduate</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">138</span></div>
-    <div class="row"><span>PhD candidate</span><div class="track"><div class="fill" style="width:81%"></div></div><span class="val">112</span></div>
-    <div class="row"><span>Master's</span><div class="track"><div class="fill" style="width:66%"></div></div><span class="val">91</span></div>
-    <div class="row"><span>Early career</span><div class="track"><div class="fill" style="width:63%"></div></div><span class="val">87</span></div>
-    <div class="row"><span>Postdoc</span><div class="track"><div class="fill" style="width:45%"></div></div><span class="val">62</span></div>
-    <div class="row"><span>Mid career</span><div class="track"><div class="fill" style="width:43%"></div></div><span class="val">59</span></div>
-    <div class="row"><span>Senior</span><div class="track"><div class="fill" style="width:40%"></div></div><span class="val">55</span></div>
-    <div class="row"><span>Industry</span><div class="track"><div class="fill" style="width:17%"></div></div><span class="val">23</span></div>
-    <div class="caption">A programme can be open to several career levels.</div>
+    <div class="row"><span>Early career</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">216</span></div>
+    <div class="row"><span>PhD candidate</span><div class="track"><div class="fill" style="width:87%"></div></div><span class="val">187</span></div>
+    <div class="row"><span>Undergraduate</span><div class="track"><div class="fill" style="width:83%"></div></div><span class="val">179</span></div>
+    <div class="row"><span>Mid career</span><div class="track"><div class="fill" style="width:75%"></div></div><span class="val">161</span></div>
+    <div class="row"><span>Senior</span><div class="track"><div class="fill" style="width:71%"></div></div><span class="val">154</span></div>
+    <div class="row"><span>Master's</span><div class="track"><div class="fill" style="width:69%"></div></div><span class="val">148</span></div>
+    <div class="row"><span>Postdoc</span><div class="track"><div class="fill" style="width:57%"></div></div><span class="val">123</span></div>
+    <div class="row"><span>Industry</span><div class="track"><div class="fill" style="width:23%"></div></div><span class="val">49</span></div>
     </div>
 
 === "By provider"
 
     <div class="bars" markdown>
-    <div class="row"><span>University</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">161</span></div>
-    <div class="row"><span>Government</span><div class="track"><div class="fill" style="width:61%"></div></div><span class="val">98</span></div>
-    <div class="row"><span>Foundation / charity</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">80</span></div>
-    <div class="row"><span>Intergovernmental</span><div class="track"><div class="fill" style="width:9%"></div></div><span class="val">14</span></div>
-    <div class="row"><span>Research institute</span><div class="track"><div class="fill" style="width:7%"></div></div><span class="val">12</span></div>
-    <div class="row"><span>Industry</span><div class="track"><div class="fill" style="width:3%"></div></div><span class="val">5</span></div>
+    <div class="row"><span>Government</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">230</span></div>
+    <div class="row"><span>University</span><div class="track"><div class="fill" style="width:77%"></div></div><span class="val">177</span></div>
+    <div class="row"><span>Foundation / charity</span><div class="track"><div class="fill" style="width:77%"></div></div><span class="val">177</span></div>
+    <div class="row"><span>Research institute</span><div class="track"><div class="fill" style="width:9%"></div></div><span class="val">20</span></div>
+    <div class="row"><span>Intergovernmental</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="val">18</span></div>
+    <div class="row"><span>Industry</span><div class="track"><div class="fill" style="width:3%"></div></div><span class="val">7</span></div>
     </div>
 
 === "By deadline status"
 
     <div class="bars" markdown>
-    <div class="row"><span>Open now</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">119</span></div>
-    <div class="row"><span>Unclear (no date on the page)</span><div class="track"><div class="fill alt" style="width:87%"></div></div><span class="val">103</span></div>
-    <div class="row"><span>Upcoming</span><div class="track"><div class="fill" style="width:66%"></div></div><span class="val">78</span></div>
-    <div class="row"><span>Closed for this cycle</span><div class="track"><div class="fill" style="width:59%"></div></div><span class="val">70</span></div>
+    <div class="row"><span>Open now</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">226</span></div>
+    <div class="row"><span>Unclear (no date on the page)</span><div class="track"><div class="fill alt" style="width:80%"></div></div><span class="val">180</span></div>
+    <div class="row"><span>Upcoming</span><div class="track"><div class="fill" style="width:55%"></div></div><span class="val">125</span></div>
+    <div class="row"><span>Closed for this cycle</span><div class="track"><div class="fill" style="width:43%"></div></div><span class="val">98</span></div>
     </div>
 
 ## From the web to the verified library
 
 | Stage | Count |
 |---|---|
-| Websites visited | 6,467 |
-| Pages fetched | 92,016 |
-| Pages discarded as not a programme / as duplicates | 27,496 / 6,025 |
-| Candidate pages waiting for extraction | ~18,900 |
-| Programme records extracted | 1,207 |
-| Fully verified (searchable) | 370 |
-| Partly withheld (at least one claim unconfirmed) | 252 |
-| Waiting for the claim check | 585 |
+| Websites visited | 7,821 |
+| Pages fetched | 141,740 |
+| Pages discarded as not a programme / as duplicates | 38,506 / 10,217 |
+| Programme records extracted | 6,090 |
+| Fully verified (searchable) | 629 |
 
 We chose **quality over volume**: only fully verified records are searchable.
 

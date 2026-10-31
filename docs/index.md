@@ -9,6 +9,10 @@ hide:
 
 *GP8000 / GP8001 AI Literacy · Cohort C · Group 5*
 
+[Try the live app :material-arrow-right:](https://access-funding.streamlit.app/){ .md-button .md-button--primary target="_blank" }
+[Read the documentation](documentation/index.md){ .md-button }
+[View the code :material-github:](https://github.com/vishram0905/access){ .md-button target="_blank" }
+
 Researchers look for funding across thousands of university, government and foundation websites. Most of what they
 find is irrelevant, and much of what looks relevant is closed to them: it requires a different nationality, career
 stage or host country. Existing scholarly recommender systems rank opportunities by **topic**; they do not check
@@ -19,13 +23,13 @@ open web, **verifies every displayed fact against the funder's own page**, and r
 researcher is eligible for, ranked by fit and with the evidence for each decision.
 
 <div class="kpis" markdown>
-<div class="kpi"><div class="num">370</div><div class="lbl">programmes with every displayed fact verified</div></div>
-<div class="kpi"><div class="num">631</div><div class="lbl">eligibility rules, each backed by a quote from the funder's page</div></div>
+<div class="kpi"><div class="num">629</div><div class="lbl">programmes with every displayed fact verified</div></div>
+<div class="kpi"><div class="num">1,009</div><div class="lbl">eligibility rules, each backed by a quote from the funder's page</div></div>
 <div class="kpi"><div class="num">0.4 s</div><div class="lbl">to the first eligibility-filtered results</div></div>
 <div class="kpi"><div class="num">93%</div><div class="lbl">of test searches find the target programme in the top five</div></div>
 </div>
 
-<small>Figures as of 12 October 2026. See [Results](results.md).</small>
+<small>Figures as of 31 October 2026. See [Results](results.md).</small>
 
 ## The idea in one picture
 

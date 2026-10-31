@@ -16,10 +16,10 @@ The **Auditor** tests the Info Critic with planted errors, and the **Sentinel** 
 ## The funnel
 
 <div class="bars" markdown>
-<div class="row"><span>Pages fetched</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">92,016</span></div>
-<div class="row"><span>Programme records extracted</span><div class="track"><div class="fill" style="width:14%"></div></div><span class="val">1,207</span></div>
-<div class="row"><span>Fully verified</span><div class="track"><div class="fill alt" style="width:4.5%"></div></div><span class="val">370</span></div>
-<div class="caption">From 6,467 websites, as of 12 October 2026. Bars are not to scale. Of the extracted records, 252 have at least one claim withheld and 585 are still waiting for the claim check.</div>
+<div class="row"><span>Pages fetched</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">141,740</span></div>
+<div class="row"><span>Programme records extracted</span><div class="track"><div class="fill" style="width:14%"></div></div><span class="val">6,090</span></div>
+<div class="row"><span>Fully verified</span><div class="track"><div class="fill alt" style="width:4.5%"></div></div><span class="val">629</span></div>
+<div class="caption">From 7,821 websites, as of 31 October 2026. Bars are not to scale.</div>
 </div>
 
 Most fetched pages are not funding programmes (27,496) or are duplicates (6,025). About 18,900 further candidate pages

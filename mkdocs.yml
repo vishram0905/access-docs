@@ -3,8 +3,8 @@ site_description: >-
   AI-Curated Constraint-Aware Eligibility & Scholarly Search: a multi-agent system that finds research funding a
   researcher is eligible for, with every stated condition traced to the funder's own page.
 site_url: https://vishram0905.github.io/access-docs/
-repo_url: https://github.com/vishram0905/access-docs
-repo_name: access-docs
+repo_url: https://github.com/vishram0905/access
+repo_name: vishram0905/access
 copyright: >-
   GP8000 / GP8001 AI Literacy · Cohort C · Group 5<br>
   This site records anonymous visit counts (GoatCounter). No cookies are used and no personal data is stored.
