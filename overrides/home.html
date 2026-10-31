@@ -1,0 +1,94 @@
+{% extends "main.html" %}
+
+{#- Landing page for the project site. The Markdown in docs/index.md is rendered further down, under "Read the
+    full write-up"; everything above it is laid out here so the first screen works like a product page. -#}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="lp-hero">
+    <div class="md-grid lp-hero__grid">
+      <div class="lp-hero__copy">
+        <p class="lp-eyebrow">GP8000 / GP8001 AI Literacy · NTU · Cohort C · Group 5</p>
+        <h1 class="lp-hero__title">Research funding you are actually eligible for.</h1>
+        <p class="lp-hero__lead">
+          ACCESS reads funders' official pages, checks every eligibility rule against your profile and shows the
+          quote behind each decision. Results in under a second, verified by three independent AI judges.
+        </p>
+        <div class="lp-hero__cta">
+          <a class="lp-btn lp-btn--primary" href="https://access-funding.streamlit.app/" target="_blank" rel="noopener">
+            Try the live app
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="lp-btn lp-btn--ghost" href="{{ 'documentation/' | url }}">How it works</a>
+          <a class="lp-btn lp-btn--ghost" href="https://github.com/vishram0905/access" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            Code
+          </a>
+        </div>
+      </div>
+      <div class="lp-hero__shot">
+        <div class="lp-window">
+          <div class="lp-window__bar"><i></i><i></i><i></i><span>access-funding.streamlit.app</span></div>
+          <img src="{{ 'assets/img/app-results.webp' | url }}" alt="ACCESS search results: eligible programmes with match scores, funding amounts, deadlines and rules met" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-stats">
+    <div class="md-grid lp-stats__grid">
+      <div><b>629</b><span>verified programmes</span></div>
+      <div><b>1,009</b><span>eligibility rules, each backed by a quote</span></div>
+      <div><b>0.4 s</b><span>to the first eligible results</span></div>
+      <div><b>93%</b><span>of test searches find the target in the top five</span></div>
+    </div>
+    <p class="md-grid lp-stats__note">Figures as of 31 October 2026.</p>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <section class="lp-section">
+    <p class="lp-kicker">The problem</p>
+    <h2 class="lp-h2">Search engines match topics. Applications fail on rules.</h2>
+    <div class="lp-cards lp-cards--3">
+      <div class="lp-card">
+        <div class="lp-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3>Fragmented sources</h3>
+        <p>Funding is published on thousands of university, government and foundation websites, and no single portal covers them.</p>
+      </div>
+      <div class="lp-card">
+        <div class="lp-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Eligibility decides</h3>
+        <p>Nationality, career stage, host country and deadline decide whether you can apply. Relevance alone does not.</p>
+      </div>
+      <div class="lp-card">
+        <div class="lp-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <h3>Errors are costly</h3>
+        <p>A wrong deadline or a misread nationality rule wastes weeks. Every fact we show must be checkable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-kicker">How it works</p>
+    <h2 class="lp-h2">Language models read and judge. Code decides.</h2>
+    <ol class="lp-steps">
+      <li><span class="lp-step__n">0</span><h3>Build the library</h3><p>Agents crawl official funder sites, extract each programme with a quote for every rule, and three judges from three companies verify each claim.</p></li>
+      <li><span class="lp-step__n">1</span><h3>Understand you</h3><p>A short form becomes a structured profile. Fixed facts are taken as given; research fields are inferred locally.</p></li>
+      <li><span class="lp-step__n">2</span><h3>Match and filter</h3><p>Keyword and meaning-based search are fused by rank, then plain code tests every eligibility rule, line by line.</p></li>
+      <li><span class="lp-step__n">3</span><h3>Rank and explain</h3><p>Eligible programmes are ranked by fit, with the evidence, deadlines and an application plan on request.</p></li>
+    </ol>
+    <p class="lp-more"><a href="{{ 'documentation/' | url }}">Read the full documentation &rarr;</a></p>
+  </section>
+
+  <section class="lp-section lp-writeup">
+    <p class="lp-kicker">The write-up</p>
+    {{ page.content }}
+  </section>
+
+  <section class="lp-band">
+    <h2>See it on your own profile.</h2>
+    <p>No sign-up. Describe your research, pick your nationality and career stage, and get your eligible programmes.</p>
+    <a class="lp-btn lp-btn--light" href="https://access-funding.streamlit.app/" target="_blank" rel="noopener">Open ACCESS</a>
+  </section>
+{% endblock %}
