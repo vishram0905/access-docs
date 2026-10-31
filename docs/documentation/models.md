@@ -9,8 +9,8 @@ paid service is used.
 |---|---|---|
 | Normalizer (extraction) | Gemini Flash family (Google) | Gemini API, free tier |
 | Judge pool: three per record, never Google | GPT-OSS-120B (OpenAI), Qwen 27B (Alibaba), Nemotron 3 Super (NVIDIA), GLM-5.3 Flash (Zhipu), Phi-4-mini (Microsoft), Muse Glimmer 30B (Meta) | Groq and NVIDIA free tiers; Phi-4-mini locally |
-| Online reviewers | GPT-OSS-120B, Phi-4-mini | Groq; local |
-| Fit ranker | Qwen 27B, with a fallback chain across three companies | Groq; NVIDIA |
+| Online reviewers | GPT-OSS-120B, Phi-4-mini (Qwen 27B on the hosted demo) | Groq; local |
+| Fit ranker | Qwen 27B, with a fallback chain across three companies. The hosted demo uses GPT-OSS-20B, reserved for it alone | Groq; NVIDIA |
 | Application plans and Q&A | First available: Gemini Flash, Nemotron, GLM, Qwen | Various |
 | Auditor | First model that did not judge the record being re-checked | Various |
 | Embeddings | nomic-embed-text | Locally |
@@ -33,6 +33,10 @@ scheduling problem:
   live searches need.
 - **Live requests first.** Background roles may use only 60% of each minute's token allowance, so a researcher's
   search never queues behind background work.
+- **A dedicated model for the hosted demo.** Free-tier limits apply per model, so the hosted demo ranks with a model
+  (GPT-OSS-20B, at low reasoning effort) that no background agent calls. Its whole per-minute and daily allowance
+  goes to live searches: a search with 29 eligible programmes is scored in about 9 s. One model still allows only
+  about one such search per minute; a search that waits longer than 30 s is shown in relevance order instead.
 - **Fallback chains.** Each AI role has an ordered list of models from different providers; the first with quota
   available is used.
 - **Failures are never the record's fault.** A provider outage, timeout or quota error pauses the work. It does not
