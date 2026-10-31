@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -490,6 +492,8 @@
       
         
       
+        
+      
     
     
     
@@ -545,6 +549,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works, explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -992,6 +1024,10 @@
 <h1 id="layer-3-ranking-and-explanation">Layer 3 · Ranking and explanation<a class="headerlink" href="#layer-3-ranking-and-explanation" title="Permanent link">&para;</a></h1>
 <p>Layer 3 orders the eligible programmes by fit and explains each result. It follows one user-experience principle:
 <strong>answer first, then refine.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">The maths behind this layer</p>
+<p>Plain-language explanations, equations and worked examples: <a href="../explained/#7-the-fit-score-late-fusion">the fit score</a> and <a href="../explained/#12-answering-questions-from-the-official-page-retrieval-augmented-generation">retrieval-augmented generation</a>.</p>
+</div>
 <div class="flow">
 <div class="step"><strong>0.4 s · Instant results</strong>Search and eligibility gate. No cloud AI is involved, so results appear even if every model provider is down.</div>
 <div class="step"><strong>~15 s · Fit ranking</strong>In the background, a language model scores each eligible programme for fit and gives a reason.</div>
@@ -1140,6 +1176,12 @@ did not recognise citations written as "P5" instead of "5". After the fix, the s
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

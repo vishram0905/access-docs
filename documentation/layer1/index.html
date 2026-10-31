@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -490,6 +492,8 @@
       
         
       
+        
+      
     
     
     
@@ -545,6 +549,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works, explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -995,11 +1027,16 @@ that represents the researcher's interests, and typed attributes that can be tes
 <pre class="mermaid"><code>flowchart LR
   F["Consent-based form&lt;br/&gt;interests · nationality · career stage&lt;br/&gt;target countries · programme types"] --&gt; E["Interest embedding&lt;br/&gt;(for finding relevant programmes)"]
   F --&gt; A["Eligibility attributes&lt;br/&gt;(for testing rules)"]</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">The maths behind this layer</p>
+<p>Plain-language explanations, equations and worked examples: <a href="../explained/#1-turning-text-into-numbers-embeddings"><abbr title="Lists of numbers representing the meaning of texts">embeddings</abbr></a>, <a href="../explained/#4-guessing-research-fields-zero-shot-classification">field inference</a> and <a href="../explained/#6-one-follow-up-question-greedy-information-gain">the follow-up question</a>.</p>
+</div>
 <h2 id="input-form-consent-and-data-minimisation">Input form: consent and data minimisation<a class="headerlink" href="#input-form-consent-and-data-minimisation" title="Permanent link">&para;</a></h2>
 <p><strong>What it does.</strong> Collects only what matching needs, after explicit consent.</p>
 <p><strong>Method.</strong></p>
 <ul>
-<li>A consent box must be ticked before a search runs.</li>
+<li>The form states, next to the search button, that answers are used only to find funding and that searches are
+  kept without a name to evaluate the system. Running a search signals consent.</li>
 <li>Saved searches never store a personal name; they are kept only to evaluate the system.</li>
 <li>A blank field means <strong>unknown</strong>, never "no" and never a default value. An early version used a default age of 25,
   which silently decided age rules for users who had never given an age; this was removed.</li>
@@ -1009,7 +1046,7 @@ Personal Data Protection Act (<abbr title="Personal Data Protection Act (Singapo
 <h2 id="profile-builder">Profile builder<a class="headerlink" href="#profile-builder" title="Permanent link">&para;</a></h2>
 <p><strong>What it does.</strong> Converts the form into the two representations above.</p>
 <p><strong>Method.</strong> Facts from the form are used unchanged. Research fields are inferred locally by <em><abbr title="Doing a task from instructions alone, without worked examples">zero-shot</abbr> <abbr title="A list of numbers representing the meaning of a text">embedding</abbr>
-classification</em>: the description and 25 field labels are embedded, and every field within a small margin (0.035) of
+classification</em>: the description and 24 field labels are embedded, and every field within a small margin (0.035) of
 the best cosine score is kept. The user can confirm or override the inferred fields.</p>
 <p><strong>Why this method.</strong> An earlier version used a cloud language model to build the profile, which made every search
 depend on the model's quota. The local method answers instantly and never fails because a provider is busy. A margin
@@ -1126,6 +1163,12 @@ conversational interviewer.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -490,6 +492,8 @@
       
         
       
+        
+      
     
     
     
@@ -545,6 +549,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works, explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1178,6 +1210,10 @@ Because it runs in the background, slow and careful verification never delays a 
 <div class="step"><strong>4 · Library</strong>Vector index (meaning) and rule register (eligibility rules)</div>
 </div>
 <p>The <strong>Auditor</strong> tests the Info Critic with planted errors, and the <strong>Sentinel</strong> monitors the whole pipeline.</p>
+<div class="admonition tip">
+<p class="admonition-title">The maths behind this layer</p>
+<p>Plain-language explanations, equations and worked examples: <a href="../explained/#8-verifying-facts-with-a-jury-majority-voting">majority voting</a>, <a href="../explained/#9-measuring-agreement-fleiss-kappa">Fleiss' kappa</a>, <a href="../explained/#10-testing-the-tester-fault-injection-and-confidence-intervals">fault injection and confidence intervals</a> and <a href="../explained/#13-the-trust-score-a-transparent-weighted-sum">the trust score</a>.</p>
+</div>
 <h2 id="the-funnel">The funnel<a class="headerlink" href="#the-funnel" title="Permanent link">&para;</a></h2>
 <div class="bars">
 <div class="row"><span>Pages fetched</span><div class="track"><div class="fill" style="width:100%"></div>
@@ -1496,6 +1532,12 @@ queued pages; provider failures now pause the work instead.</p>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

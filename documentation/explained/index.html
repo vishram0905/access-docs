@@ -1,0 +1,2026 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI-Curated Constraint-Aware Eligibility & Scholarly Search: a multi-agent system that finds research funding a researcher is eligible for, with every stated condition traced to the funder's own page.">
+      
+      
+      
+        <link rel="canonical" href="https://vishram0905.github.io/access-docs/documentation/explained/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../literature/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>How it works, explained - ACCESS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <!-- Anonymous visit counts (GoatCounter): no cookies, no personal data stored -->
+  <script data-goatcounter="https://access-funding.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-it-works-explained" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACCESS" class="md-header__button md-logo" aria-label="ACCESS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACCESS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How it works, explained
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vishram0905/access" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vishram0905/access
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../results/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Results
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../test-report/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Test report
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACCESS" class="md-nav__button md-logo" aria-label="ACCESS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    ACCESS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vishram0905/access" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vishram0905/access
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works, explained
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works, explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-journey-of-one-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The journey of one search
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-turning-text-into-numbers-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · Turning text into numbers: embeddings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-keyword-search-bm25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Keyword search: BM25
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-combining-two-rankings-reciprocal-rank-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · Combining two rankings: reciprocal rank fusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-guessing-research-fields-zero-shot-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · Guessing research fields: zero-shot classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-eligibility-as-logic-the-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · Eligibility as logic: the gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-one-follow-up-question-greedy-information-gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 · One follow-up question: greedy information gain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-fit-score-late-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 · The fit score: late fusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-verifying-facts-with-a-jury-majority-voting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 · Verifying facts with a jury: majority voting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-measuring-agreement-fleiss-kappa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 · Measuring agreement: Fleiss' kappa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testing-the-tester-fault-injection-and-confidence-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Testing the tester: fault injection and confidence intervals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-how-search-quality-is-measured-recallk-and-mrr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 · How search quality is measured: recall@k and MRR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-answering-questions-from-the-official-page-retrieval-augmented-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 · Answering questions from the official page: retrieval-augmented generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-the-trust-score-a-transparent-weighted-sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 · The trust score: a transparent weighted sum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-sharing-a-free-quota-fairly-rate-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 · Sharing a free quota fairly: rate budgets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 0 · Building the library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 1 · Understanding the user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 2 · Matching and eligibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layer3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layer 3 · Ranking and explanation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models and resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-journey-of-one-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The journey of one search
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-turning-text-into-numbers-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · Turning text into numbers: embeddings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-keyword-search-bm25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Keyword search: BM25
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-combining-two-rankings-reciprocal-rank-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · Combining two rankings: reciprocal rank fusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-guessing-research-fields-zero-shot-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · Guessing research fields: zero-shot classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-eligibility-as-logic-the-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · Eligibility as logic: the gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-one-follow-up-question-greedy-information-gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 · One follow-up question: greedy information gain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-fit-score-late-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 · The fit score: late fusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-verifying-facts-with-a-jury-majority-voting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 · Verifying facts with a jury: majority voting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-measuring-agreement-fleiss-kappa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 · Measuring agreement: Fleiss' kappa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testing-the-tester-fault-injection-and-confidence-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Testing the tester: fault injection and confidence intervals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-how-search-quality-is-measured-recallk-and-mrr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 · How search quality is measured: recall@k and MRR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-answering-questions-from-the-official-page-retrieval-augmented-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 · Answering questions from the official page: retrieval-augmented generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-the-trust-score-a-transparent-weighted-sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 · The trust score: a transparent weighted sum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-sharing-a-free-quota-fairly-rate-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 · Sharing a free quota fairly: rate budgets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="how-it-works-explained">How it works, explained<a class="headerlink" href="#how-it-works-explained" title="Permanent link">&para;</a></h1>
+<p>This page explains the methods inside ACCESS for readers from any background. Every section has three levels, and
+you can stop at whichever suits you:</p>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>The idea in everyday language, with an analogy where one helps.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<p>The method applied to a small, concrete case, with the actual numbers.</p>
+</div>
+<p>The <strong>maths</strong> sits between the two, with every symbol explained. All constants on this page are the values the
+deployed system uses, and each section links to the layer page where the method is evaluated.</p>
+<hr />
+<h2 id="the-journey-of-one-search">The journey of one search<a class="headerlink" href="#the-journey-of-one-search" title="Permanent link">&para;</a></h2>
+<p>Before the individual methods, here is what happens between pressing <strong>Find funding</strong> and reading the results. The
+first answer comes from local code alone; language models only refine it afterwards.</p>
+<div class="diagram wide">
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor R as Researcher
+  participant P as Profile builder
+  participant S as Search (BM25 + embeddings)
+  participant G as Eligibility gate
+  participant L as Fit ranker and reviewers
+  R-&gt;&gt;P: Description, nationality, career stage, preferences
+  P-&gt;&gt;P: Infer research fields (local embeddings)
+  P-&gt;&gt;S: Profile and query
+  S-&gt;&gt;S: Filter by type and country, then rank by keywords and meaning
+  S-&gt;&gt;G: Candidate programmes, best first
+  G-&gt;&gt;G: Test every eligibility rule against the profile
+  G--&gt;&gt;R: Eligible / within reach / excluded, in about 0.4 s
+  G-&gt;&gt;L: Eligible programmes
+  L-&gt;&gt;L: Score fit 0–100 with a reason, review relevance
+  L--&gt;&gt;R: Re-ordered list with fit scores, seconds later</code></pre>
+</div>
+<p class="swipe-hint">Swipe sideways to see the whole diagram.</p>
+
+<p>The split matters for reliability: steps 1 to 7 involve no cloud service, so results appear even when every model
+provider is unavailable. Steps 8 to 10 only re-order what the gate has already decided.</p>
+<hr />
+<h2 id="1-turning-text-into-numbers-embeddings">1 · Turning text into numbers: <abbr title="Lists of numbers representing the meaning of texts">embeddings</abbr><a class="headerlink" href="#1-turning-text-into-numbers-embeddings" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>A computer cannot compare the <em>meaning</em> of two sentences directly, so we convert each text into a list of
+numbers, called an <strong><abbr title="A list of numbers representing the meaning of a text">embedding</abbr></strong>, in which texts with similar meanings receive similar numbers. Think of it as
+giving every text a position on a map with 768 directions instead of two: "PhD scholarship in machine learning"
+and "doctoral fellowship in artificial intelligence" land close together even though they share almost no words,
+while "grant for music performance" lands far away.</p>
+</div>
+<div class="diagram">
+<p><svg viewBox="0 0 520 260" role="img" aria-label="Three text embeddings drawn as arrows; two related texts point in nearly the same direction, an unrelated one points elsewhere" style="width:100%;max-width:560px;height:auto">
+  <line x1="40" y1="220" x2="500" y2="220" stroke="currentColor" stroke-opacity=".3"/>
+  <line x1="40" y1="220" x2="40" y2="20" stroke="currentColor" stroke-opacity=".3"/>
+  <line x1="40" y1="220" x2="400" y2="70" stroke="#2F6690" stroke-width="3"/>
+  <circle cx="400" cy="70" r="5" fill="#2F6690"/>
+  <text x="300" y="52" font-size="13" fill="currentColor">"PhD scholarship in machine learning"</text>
+  <line x1="40" y1="220" x2="380" y2="105" stroke="#2F6690" stroke-width="3" stroke-opacity=".7"/>
+  <circle cx="380" cy="105" r="5" fill="#2F6690" fill-opacity=".7"/>
+  <text x="300" y="128" font-size="13" fill="currentColor">"doctoral fellowship in AI"</text>
+  <line x1="40" y1="220" x2="120" y2="40" stroke="#C8642B" stroke-width="3"/>
+  <circle cx="120" cy="40" r="5" fill="#C8642B"/>
+  <text x="130" y="36" font-size="13" fill="currentColor">"grant for music performance"</text>
+  <path d="M 125.2 191.1 A 90 90 0 0 0 123.1 185.4" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="150" y="207" font-size="12" fill="currentColor" fill-opacity=".85">small angle θ: similar meaning</text>
+  <path d="M 81.5 202.7 A 45 45 0 0 0 58.3 178.9" fill="none" stroke="#C8642B" stroke-width="2"/>
+  <text x="48" y="246" font-size="12" fill="#C8642B">orange arc, large angle: different meaning</text>
+</svg></p>
+</div>
+<p><strong>The maths.</strong> We measure closeness by the angle between two <abbr title="A list of numbers representing the meaning of a text">embedding</abbr> vectors <span class="arithmatex">\(\mathbf{a}\)</span> and <span class="arithmatex">\(\mathbf{b}\)</span>, using
+<em>cosine similarity</em>:</p>
+<div class="arithmatex">\[
+\cos\theta \;=\; \frac{\mathbf{a}\cdot\mathbf{b}}{\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert}
+\;=\; \frac{\sum_{i=1}^{768} a_i b_i}{\sqrt{\sum_i a_i^2}\,\sqrt{\sum_i b_i^2}}
+\]</div>
+<p>The result runs from −1 (opposite) through 0 (unrelated) to 1 (same direction). We store every vector already
+divided by its length, so at search time the similarity is a single dot product, <span class="arithmatex">\(\mathbf{a}\cdot\mathbf{b}\)</span>, and
+comparing a query with every programme in the library takes milliseconds.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<p>With toy three-number <abbr title="Lists of numbers representing the meaning of texts">embeddings</abbr> <span class="arithmatex">\(\mathbf{a} = (0.8, 0.6, 0)\)</span> and <span class="arithmatex">\(\mathbf{b} = (0.6, 0.8, 0)\)</span>, both of length 1:
+<span class="arithmatex">\(\cos\theta = 0.8 \times 0.6 + 0.6 \times 0.8 + 0 = 0.96\)</span>, very similar. Against <span class="arithmatex">\(\mathbf{c} = (0, 0, 1)\)</span>:
+<span class="arithmatex">\(\cos\theta = 0\)</span>, unrelated.</p>
+</div>
+<p><strong>Where ACCESS uses it.</strong> The model is <code>nomic-embed-text</code>, run locally, which produces 768 numbers per text.
+Programme descriptions are embedded once when they are published; the researcher's query is embedded at search time.
+See <a href="../layer2/#research-matcher-hybrid-search">Layer 2</a>.</p>
+<hr />
+<h2 id="2-keyword-search-bm25">2 · Keyword search: <abbr title="A standard keyword-search formula that weights rare words more than common ones">BM25</abbr><a class="headerlink" href="#2-keyword-search-bm25" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>Embeddings are good at meaning but can blur exact names: "Chevening", "SINGA" or "cryo-EM" matter precisely.
+<strong><abbr title="A standard keyword-search formula that weights rare words more than common ones">BM25</abbr></strong> is the classic keyword-scoring method behind many search engines. It rewards a programme for containing
+the words in your query, with three sensible adjustments: rare words count for more than common ones, repeating a
+word helps less and less, and long pages do not win merely by being long.</p>
+</div>
+<p><strong>The maths.</strong> For a query <span class="arithmatex">\(q\)</span> and a programme description <span class="arithmatex">\(d\)</span>:</p>
+<div class="arithmatex">\[
+\text{BM25}(d, q) \;=\; \sum_{t \in q} \text{IDF}(t)\cdot
+\frac{f(t,d)\,(k_1 + 1)}{f(t,d) + k_1\left(1 - b + b\,\dfrac{|d|}{\text{avgdl}}\right)}
+\]</div>
+<p>where the weight of a word, its <em>inverse document frequency</em>, is</p>
+<div class="arithmatex">\[
+\text{IDF}(t) \;=\; \ln\!\left(1 + \frac{N - n(t) + 0.5}{n(t) + 0.5}\right)
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Value in ACCESS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f(t,d)\)</span></td>
+<td>how many times word <span class="arithmatex">\(t\)</span> appears in description <span class="arithmatex">\(d\)</span></td>
+<td>counted</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lvert d\rvert\)</span>, avgdl</td>
+<td>length of <span class="arithmatex">\(d\)</span>, and the average length across the library</td>
+<td>counted</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N\)</span>, <span class="arithmatex">\(n(t)\)</span></td>
+<td>number of programmes, and how many contain <span class="arithmatex">\(t\)</span></td>
+<td>counted</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(k_1\)</span></td>
+<td>how quickly repeated words stop helping (saturation)</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(b\)</span></td>
+<td>how strongly long descriptions are penalised (0 = not at all, 1 = fully)</td>
+<td>0.75</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Worked example: the three adjustments</p>
+<ul>
+<li><strong>Rare words count more.</strong> In a library of 1,000 programmes, a word found in 5 of them has
+  <span class="arithmatex">\(\text{IDF} = \ln(1 + 995.5/5.5) \approx 5.20\)</span>; a word found in 600 has <span class="arithmatex">\(\text{IDF} \approx 0.51\)</span>. The rare
+  word is worth about ten times as much.</li>
+<li><strong>Repetition saturates.</strong> For a description of average length, the word-count part of the formula is
+  <span class="arithmatex">\(f \cdot 2.5 / (f + 1.5)\)</span>: one mention gives 1.00, two give 1.43, five give 1.92, twenty give 2.33, and no
+  number of repetitions can exceed 2.5.</li>
+<li><strong>Length is normalised.</strong> A description twice the average length needs more mentions to reach the same score.</li>
+</ul>
+</div>
+<p><strong>Where ACCESS uses it.</strong> Matching programmes to a researcher (Layer 2), and finding the passages of an official page
+that relate to a claim or a question (Layers 0 and 3). We implemented it directly from the formula above.</p>
+<hr />
+<h2 id="3-combining-two-rankings-reciprocal-rank-fusion">3 · Combining two rankings: reciprocal rank fusion<a class="headerlink" href="#3-combining-two-rankings-reciprocal-rank-fusion" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>We now have two ranked lists, one by meaning and one by keywords, and their scores are on different scales: a
+cosine of 0.6 and a <abbr title="A standard keyword-search formula that weights rare words more than common ones">BM25</abbr> score of 14 cannot be added. <strong>Reciprocal rank fusion (<abbr title="Reciprocal rank fusion: merges ranked lists by rank position">RRF</abbr>)</strong> ignores the raw scores and
+uses only each programme's <em>position</em> in each list. A programme near the top of either list scores well; one
+near the top of both scores best.</p>
+</div>
+<p><strong>The maths.</strong> For each programme <span class="arithmatex">\(d\)</span>, with <span class="arithmatex">\(\text{rank}_r(d)\)</span> its position in list <span class="arithmatex">\(r\)</span> (1 = top):</p>
+<div class="arithmatex">\[
+\text{RRF}(d) \;=\; \sum_{r} \frac{w_r}{k + \text{rank}_r(d)}, \qquad k = 60,\quad
+w_{\text{keyword}} = 2,\quad w_{\text{meaning}} = 1
+\]</div>
+<p>The constant <span class="arithmatex">\(k = 60\)</span> comes from the original paper <a href="../../references/">[18]</a> and stops the very top positions from
+dominating. The 2:1 weighting in favour of keywords was chosen on our known-item benchmark, where it found the target
+programme in the top five for 93% of queries, against 88% for keywords alone and 73% for meaning alone.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<table>
+<thead>
+<tr>
+<th>Programme</th>
+<th>Rank by meaning</th>
+<th>Rank by keywords</th>
+<th><abbr title="Reciprocal rank fusion: merges ranked lists by rank position">RRF</abbr> score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1</td>
+<td>3</td>
+<td><span class="arithmatex">\(\frac{1}{61} + \frac{2}{63} = 0.04814\)</span></td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>4</td>
+<td><strong>1</strong></td>
+<td><span class="arithmatex">\(\frac{1}{64} + \frac{2}{61} = \mathbf{0.04841}\)</span></td>
+</tr>
+<tr>
+<td>C</td>
+<td>2</td>
+<td>10</td>
+<td><span class="arithmatex">\(\frac{1}{62} + \frac{2}{70} = 0.04470\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>B finishes first: it is the strongest keyword match and still reasonable on meaning. C is close in meaning but
+shares few of the query's words, so it drops to third.</p>
+</div>
+<hr />
+<h2 id="4-guessing-research-fields-zero-shot-classification">4 · Guessing research fields: <abbr title="Doing a task from instructions alone, without worked examples">zero-shot</abbr> classification<a class="headerlink" href="#4-guessing-research-fields-zero-shot-classification" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>The researcher writes a free-text description; the eligibility rules need fields such as "computer science" or
+"life sciences". Instead of training a classifier, we embed the description and the name of each of 24 fields,
+and keep the fields whose <abbr title="Lists of numbers representing the meaning of texts">embeddings</abbr> are closest. "<abbr title="Doing a task from instructions alone, without worked examples">Zero-shot</abbr>" means no labelled training examples are needed.</p>
+</div>
+<p><strong>The maths.</strong> With <span class="arithmatex">\(s_j\)</span> the cosine similarity between the description and field <span class="arithmatex">\(j\)</span>, we keep every field within a
+small margin of the best:</p>
+<div class="arithmatex">\[
+\text{fields} \;=\; \{\, j \;:\; s_j \ge \max_i s_i - 0.035 \,\}, \quad \text{at most 4, best first}
+\]</div>
+<p>The margin exists because descriptions often span two areas. With only the single best field, one physicist's
+description was labelled chemistry, because physics scored just below it; with the margin, both are kept. The researcher can always
+confirm or change the fields. See <a href="../layer1/#profile-builder">Layer 1</a>.</p>
+<hr />
+<h2 id="5-eligibility-as-logic-the-gate">5 · Eligibility as logic: the gate<a class="headerlink" href="#5-eligibility-as-logic-the-gate" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>Whether you <em>can</em> apply is a yes-or-no question with a reason, so we answer it with plain, tested code rather than
+a language model. Each programme's rules (nationality, career stage, years since PhD, language scores and so on)
+are stored as small typed statements, each with the quote it came from. The gate checks each rule against your
+profile, the same way every time.</p>
+</div>
+<p>Every rule is a triple, <em>attribute · operator · value</em>, for example <code>nationality in [Singapore, Singapore PR]</code> or
+<code>ielts gte 6.5</code>. Checking one rule follows this decision path:</p>
+<div class="diagram wide">
+<pre class="mermaid"><code>flowchart LR
+  A[Rule from the register] --&gt; B{Is the attribute&lt;br/&gt;in the profile?}
+  B -- no --&gt; U[Unknown&lt;br/&gt;shown as 'to confirm']
+  B -- yes --&gt; C{Rule met?}
+  C -- yes --&gt; P[Pass]
+  C -- no --&gt; D{Soft rule, and the gap&lt;br/&gt;within the margin?}
+  D -- yes --&gt; N[Near]
+  D -- no --&gt; F[Fail]</code></pre>
+</div>
+<p>A programme's overall outcome then follows from its rules:</p>
+<div class="arithmatex">\[
+\text{outcome} =
+\begin{cases}
+\text{excluded} &amp; \text{if any rule fails}\\
+\text{within reach} &amp; \text{else if any rule is near}\\
+\text{eligible} &amp; \text{otherwise}
+\end{cases}
+\]</div>
+<p>An <em>unknown</em> rule never counts as a pass: the result card marks it "to confirm", and the follow-up question
+(section 6) asks for the missing fact.</p>
+<p><strong>Near-miss margins.</strong> Only soft rules can be near. Hard rules, such as nationality or age, either pass or fail.</p>
+<table>
+<thead>
+<tr>
+<th>Soft rule</th>
+<th>Counts as near if you are short by at most</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IELTS</td>
+<td>1.0 band</td>
+</tr>
+<tr>
+<td>TOEFL</td>
+<td>15 points</td>
+</tr>
+<tr>
+<td>GPA</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>Publications</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Work experience</td>
+<td>1 year</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ordering near misses.</strong> Within-reach programmes are ordered by an estimated effort to close the gap, the <em>gap
+cost</em>, in weeks:</p>
+<div class="arithmatex">\[
+\text{gap cost} \;=\; \sum_{\text{near rules}} \frac{\text{required} - \text{yours}}{\text{step}} \times \text{weeks per step}
+\]</div>
+<p>with steps of 0.5 IELTS band (4 weeks), 5 TOEFL points (4 weeks), 0.1 GPA (8 weeks), one publication (12 weeks) and
+one year of work experience (52 weeks). A missing career stage or degree counts as 26 weeks.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<p>A programme asks for IELTS 7.0 and you have 6.5: the gap is 0.5, within the 1.0 margin, so the rule is <em>near</em>.
+Gap cost <span class="arithmatex">\(= 0.5 / 0.5 \times 4 = 4\)</span> weeks. A second programme asking for GPA 3.6 when you have 3.4 costs
+<span class="arithmatex">\(0.2 / 0.1 \times 8 = 16\)</span> weeks, so the IELTS programme is listed first.</p>
+</div>
+<p>The weeks are deliberately coarse; they are used only to put the easiest gaps first. See
+<a href="../layer2/#eligibility-gate">Layer 2</a>.</p>
+<hr />
+<h2 id="6-one-follow-up-question-greedy-information-gain">6 · One follow-up question: greedy information gain<a class="headerlink" href="#6-one-follow-up-question-greedy-information-gain" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>If many results say "to confirm: years since PhD", one answer settles all of them at once. ACCESS asks the
+single question that would settle the most open checks across your results, instead of a long questionnaire.</p>
+</div>
+<p><strong>The maths.</strong> With <span class="arithmatex">\(U(a)\)</span> the number of <em>unknown</em> checks across the shown results that depend on attribute <span class="arithmatex">\(a\)</span>:</p>
+<div class="arithmatex">\[
+a^{*} \;=\; \arg\max_{a}\; U(a)
+\]</div>
+<p>Each unknown check is an uncertain outcome, so the attribute behind the most unknowns removes the most uncertainty
+per question. This is a greedy, count-based approximation of <em>information gain</em>: it does not weigh how uncertain
+each check is, which keeps it deterministic, instant and easy to explain.</p>
+<hr />
+<h2 id="7-the-fit-score-late-fusion">7 · The fit score: late fusion<a class="headerlink" href="#7-the-fit-score-late-fusion" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>Once the gate has decided which programmes you can apply for, a language model reads each one alongside your
+profile and gives a fit score from 0 to 100 with a one-sentence reason. We blend that judgement with the
+meaning-based similarity from section 1, so the order reflects both a reasoned opinion and a measurable match.</p>
+</div>
+<p><strong>The maths.</strong> First the cosine similarity is stretched onto 0–100, so that 0.3 becomes 0 and 0.8 becomes 100,
+with values outside that range clipped:</p>
+<div class="arithmatex">\[
+\text{sim}_{100} \;=\; \min\!\left(100,\; \max\!\left(0,\; \frac{\cos\theta - 0.3}{0.5} \times 100\right)\right)
+\]</div>
+<p>Then the two are combined:</p>
+<div class="arithmatex">\[
+\text{score} \;=\; 0.7 \times \text{fit} \;+\; 0.3 \times \text{sim}_{100}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<p>The model gives a programme a fit of 90; its cosine similarity to the query is 0.62.
+<span class="arithmatex">\(\text{sim}_{100} = (0.62 - 0.3)/0.5 \times 100 = 64\)</span>, so
+<span class="arithmatex">\(\text{score} = 0.7 \times 90 + 0.3 \times 64 = 63 + 19.2 \approx 82\)</span>.</p>
+</div>
+<p><strong>Ordering rules.</strong> Programmes the model scored come first, by score. A programme is listed under <em>weaker fit</em> if its
+fit is below 40, or if two independent reviewers rate its relevance below 2 on a 1–5 scale on average. Programmes the
+model did not score (for example when the free quota is exhausted) follow under their own heading, in similarity
+order, because a similarity-only number is not on the same footing as a fit score.</p>
+<p>The weights 0.7 and 0.3 are design choices, not learned from data: no outcome data existed to learn them from. The
+ranker can only re-order; it can never add or remove a programme. See <a href="../layer3/#fit-ranker">Layer 3</a>.</p>
+<hr />
+<h2 id="8-verifying-facts-with-a-jury-majority-voting">8 · Verifying facts with a jury: majority voting<a class="headerlink" href="#8-verifying-facts-with-a-jury-majority-voting" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>A single language model checking a fact can be wrong, and it can share blind spots with the model that extracted
+the fact. So every claim is put to a panel of three models from three different companies, none of them from the
+extractor's company, and a claim is shown only if a majority agrees it is on the page. A jury of independent
+people is more reliable than any one of them; the same holds for models, <em>provided</em> their mistakes are
+independent.</p>
+</div>
+<p><strong>The maths.</strong> If each judge is right with probability <span class="arithmatex">\(p\)</span> and the judges err independently, a majority of three is
+right with probability</p>
+<div class="arithmatex">\[
+P(\text{majority correct}) \;=\; p^3 + 3p^2(1-p)
+\]</div>
+<p>(all three right, or exactly two right). This exceeds <span class="arithmatex">\(p\)</span> whenever <span class="arithmatex">\(p &gt; 0.5\)</span>, which is <em>Condorcet's jury theorem</em>.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<p>Three judges, each 80% accurate and independent: <span class="arithmatex">\(0.8^3 + 3 \times 0.8^2 \times 0.2 = 0.512 + 0.384 = 0.896\)</span>.
+The panel is right about 90% of the time, better than any single judge. If the three judges always made the
+<em>same</em> mistakes, the panel would be no better than one judge, which is why we use judges from different
+companies.</p>
+</div>
+<p><strong>The decision rule.</strong> A claim is confirmed only if both conditions hold:</p>
+<div class="arithmatex">\[
+\text{confirmed} \;=\; \underbrace{\text{located on the page}}_{\text{plain code}} \;\wedge\;
+\underbrace{\text{at least 2 of 3 judges agree}}_{\text{language models}}
+\]</div>
+<p>The first condition is checked by code at no model cost: the claim's date, amount or quote must actually be found on
+the page. A claim that fails either condition is not shown as fact; the card says "not stated, see the official page".</p>
+<div class="flow">
+<div class="step"><strong>Locate</strong>Code searches the page for the claimed date, amount or quote.</div>
+<div class="step"><strong>Interpret</strong>Three judges from three companies read only that passage and vote.</div>
+<div class="step hot"><strong>Decide</strong>Located and a 2-of-3 majority: shown. Otherwise withheld.</div>
+</div>
+<p>See <a href="../layer0/#3-info-critic">Layer 0</a>.</p>
+<hr />
+<h2 id="9-measuring-agreement-fleiss-kappa">9 · Measuring agreement: Fleiss' kappa<a class="headerlink" href="#9-measuring-agreement-fleiss-kappa" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>If three judges agree 90% of the time, is that impressive? Not if 90% of claims are obviously true, because they
+would agree that often by chance. <strong>Fleiss' kappa</strong> measures agreement <em>beyond</em> what chance alone would produce:
+1 is perfect agreement, 0 is no better than chance.</p>
+</div>
+<p><strong>The maths.</strong> For <span class="arithmatex">\(N\)</span> items, each rated by <span class="arithmatex">\(n\)</span> judges into categories <span class="arithmatex">\(j\)</span>, with <span class="arithmatex">\(n_{ij}\)</span> the number of judges who
+put item <span class="arithmatex">\(i\)</span> in category <span class="arithmatex">\(j\)</span>:</p>
+<div class="arithmatex">\[
+\kappa \;=\; \frac{\bar{P} - \bar{P}_e}{1 - \bar{P}_e},\qquad
+\bar{P} = \frac{1}{N}\sum_{i}\frac{\sum_j n_{ij}^2 - n}{n(n-1)},\qquad
+\bar{P}_e = \sum_j p_j^2,\quad p_j = \frac{\sum_i n_{ij}}{Nn}
+\]</div>
+<p><span class="arithmatex">\(\bar{P}\)</span> is the observed agreement and <span class="arithmatex">\(\bar{P}_e\)</span> the agreement expected by chance from how often each category is
+used overall.</p>
+<p><strong>In ACCESS.</strong> Over 1,888 rule judgements, <span class="arithmatex">\(\kappa = 0.51\)</span>, "moderate" on the Landis and Koch scale
+<a href="../../references/">[15]</a>. Some disagreement is healthy here: three judges who always agreed would suggest they share
+the same blind spots, which is exactly what the panel is meant to avoid.</p>
+<table>
+<thead>
+<tr>
+<th><abbr title="Fleiss' kappa: agreement among raters, corrected for chance (0 = chance, 1 = perfect)">κ</abbr></th>
+<th>Landis and Koch label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.00–0.20</td>
+<td>slight</td>
+</tr>
+<tr>
+<td>0.21–0.40</td>
+<td>fair</td>
+</tr>
+<tr>
+<td><strong>0.41–0.60</strong></td>
+<td><strong>moderate</strong></td>
+</tr>
+<tr>
+<td>0.61–0.80</td>
+<td>substantial</td>
+</tr>
+<tr>
+<td>0.81–1.00</td>
+<td>almost perfect</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-testing-the-tester-fault-injection-and-confidence-intervals">10 · Testing the tester: fault injection and confidence intervals<a class="headerlink" href="#10-testing-the-tester-fault-injection-and-confidence-intervals" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>How do we know the verification catches errors? We plant errors on purpose (a deadline moved by months, an amount
+multiplied by four, a nationality rule reversed) and count how many are caught. Because we know where every
+planted error is, the catch rate can be measured directly. Small samples are uncertain, so each rate comes with a
+range of plausible values: the <strong>95% confidence interval</strong>.</p>
+</div>
+<p><strong>The maths.</strong> For <span class="arithmatex">\(k\)</span> errors caught out of <span class="arithmatex">\(n\)</span> planted, the detection rate is <span class="arithmatex">\(\hat{p} = k/n\)</span>. We report the
+<em>Wilson score interval</em>, which behaves well for small samples and for rates near 0% or 100%:</p>
+<div class="arithmatex">\[
+\frac{\hat{p} + \dfrac{z^2}{2n} \;\pm\; z\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n} + \dfrac{z^2}{4n^2}}}{1 + \dfrac{z^2}{n}},
+\qquad z = 1.96 \text{ for 95\%}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">Worked examples from ACCESS</p>
+<ul>
+<li>Re-worded amount check, correct amounts accepted: 35 of 44 → 80%, interval 66–89%.</li>
+<li>Negative control, deliberately wrong amounts accepted: 1 of 28 → 4%, interval 0.6–18%.</li>
+<li>Harvester filter, real programme pages wrongly discarded: 6 of 60 → 10%, interval 5–20%.</li>
+</ul>
+<p>The width of the interval is the honest part: with 60 pages we can say the miss rate is somewhere between about
+one page in twenty and one in five, not that it is exactly 10%.</p>
+</div>
+<p>For search quality we use a <em>bootstrap</em> interval instead: the 100 benchmark queries are resampled 2,000 times and the
+middle 95% of the resulting scores is reported. See <a href="../layer0/#4-auditor">Layer 0</a> and the
+<a href="../../test-report/">test report</a>.</p>
+<hr />
+<h2 id="11-how-search-quality-is-measured-recallk-and-mrr">11 · How search quality is measured: recall@k and <abbr title="Mean reciprocal rank: rewards putting the correct answer near the top">MRR</abbr><a class="headerlink" href="#11-how-search-quality-is-measured-recallk-and-mrr" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>We took 100 programmes at random and had a model from a different company write the query a qualifying researcher
+might type, without naming the programme. Each query has exactly one right answer, so we can ask: did the right
+programme appear in the first five results (<strong><abbr title="Share of searches whose correct answer is in the top five results">recall@5</abbr></strong>)? And how close to the top was it, on average (<strong><abbr title="Mean reciprocal rank: rewards putting the correct answer near the top">MRR</abbr></strong>)?</p>
+</div>
+<p><strong>The maths.</strong> For <span class="arithmatex">\(Q\)</span> queries, with <span class="arithmatex">\(\text{rank}_q\)</span> the position of the correct programme for query <span class="arithmatex">\(q\)</span>:</p>
+<div class="arithmatex">\[
+\text{Recall@}k = \frac{1}{Q}\sum_{q=1}^{Q} \mathbb{1}\left[\text{rank}_q \le k\right]
+\qquad
+\text{MRR} = \frac{1}{Q}\sum_{q=1}^{Q} \frac{1}{\text{rank}_q}
+\]</div>
+<p><span class="arithmatex">\(\mathbb{1}[\cdot]\)</span> is 1 when the condition holds and 0 otherwise.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked example</p>
+<p>Four queries whose correct programmes appear at positions 1, 3, 7 and 2.
+<abbr title="Share of searches whose correct answer is in the top five results">Recall@5</abbr> <span class="arithmatex">\(= 3/4 = 0.75\)</span> (position 7 misses the top five).
+<abbr title="Mean reciprocal rank: rewards putting the correct answer near the top">MRR</abbr> <span class="arithmatex">\(= (1 + \tfrac{1}{3} + \tfrac{1}{7} + \tfrac{1}{2})/4 \approx 0.49\)</span>.</p>
+</div>
+<p>ACCESS reaches <abbr title="Share of searches whose correct answer is in the top five results">recall@5</abbr> = 0.93 and <abbr title="Mean reciprocal rank: rewards putting the correct answer near the top">MRR</abbr> = 0.79 with the method in use. See
+<a href="../layer2/#research-matcher-hybrid-search">Layer 2</a>.</p>
+<hr />
+<h2 id="12-answering-questions-from-the-official-page-retrieval-augmented-generation">12 · Answering questions from the official page: retrieval-augmented generation<a class="headerlink" href="#12-answering-questions-from-the-official-page-retrieval-augmented-generation" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>A language model asked "Do I need work experience?" might answer from general knowledge, which can be wrong for
+this particular programme. <strong>Retrieval-augmented generation (<abbr title="Retrieval-augmented generation: answer only from retrieved passages, with citations">RAG</abbr>)</strong> first finds the relevant passages of the
+programme's own page and then requires the model to answer <em>only</em> from them, quoting them word for word. If the
+passages do not answer the question, the model must say so.</p>
+</div>
+<div class="diagram wide">
+<pre class="mermaid"><code>flowchart LR
+  P[Official page text] --&gt; C[Split into passages&lt;br/&gt;110 words, 30 overlapping]
+  Q[Researcher's question] --&gt; R
+  C --&gt; R[Retrieve the best 4 passages&lt;br/&gt;BM25 + embeddings, fused by RRF]
+  R --&gt; M[Model answers only from&lt;br/&gt;these passages, citing P1–P4&lt;br/&gt;and quoting word for word]
+  M --&gt; V{Every quote found&lt;br/&gt;on the page?}
+  V -- yes --&gt; A[Answer shown as verified]
+  V -- no --&gt; X[Answer flagged as not verified]
+  M -. nothing relevant .-&gt; N["'The official page does not say.'"]</code></pre>
+</div>
+<p class="swipe-hint">Swipe sideways to see the whole diagram.</p>
+
+<p><strong>Why passages overlap.</strong> With 110-word windows that step forward by 80 words, a sentence cut at one boundary appears
+whole in the next passage.</p>
+<p><strong>The quote check.</strong> A quote counts as found if it appears on the page word for word, or if at least 60% of its
+four-word runs do, which tolerates line breaks and punctuation differences without accepting invented text.</p>
+<p><strong>In ACCESS.</strong> 24 of 24 answers on a fixed question set were faithful (every quote on the page, every citation to a
+retrieved passage); 42% were "The official page does not say". See <a href="../layer3/#application-plans-and-questions">Layer 3</a>.</p>
+<hr />
+<h2 id="13-the-trust-score-a-transparent-weighted-sum">13 · The trust score: a transparent weighted sum<a class="headerlink" href="#13-the-trust-score-a-transparent-weighted-sum" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>Each verified programme carries a single trust number that summarises <em>why</em> it can be trusted. It is a weighted
+average of six checks, each between 0 and 1, so anyone can see how it was built.</p>
+</div>
+<div class="arithmatex">\[
+\text{trust} = 0.25\,\text{authenticity} + 0.20\,\text{funding vote} + 0.20\,\text{rule support}
++ 0.20\,\text{grounding} + 0.10\,\text{agreement} + 0.05\,\text{validation}
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>What it measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authenticity</td>
+<td>Half for an official source (halved again for an archived copy or a certificate warning), half for the share of judges who agree the page describes this programme</td>
+</tr>
+<tr>
+<td>Funding vote</td>
+<td>Share of judges who agree the page is a funding opportunity</td>
+</tr>
+<tr>
+<td>Rule support</td>
+<td>Share of all judge votes on the eligibility rules that support them</td>
+</tr>
+<tr>
+<td>Grounding</td>
+<td>Share of the record's quotes found on the page (the quote check in section 12)</td>
+</tr>
+<tr>
+<td>Agreement</td>
+<td>Share of rules on which every judge voted the same way, discounted to 80% if fewer than three judges answered</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>1 if the record passed its consistency checks, 0.5 if it raised an issue</td>
+</tr>
+</tbody>
+</table>
+<p>The weights are expert choices; the Auditor's labelled test results could later be used to learn them.</p>
+<hr />
+<h2 id="14-sharing-a-free-quota-fairly-rate-budgets">14 · Sharing a free quota fairly: rate budgets<a class="headerlink" href="#14-sharing-a-free-quota-fairly-rate-budgets" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">In plain words</p>
+<p>Every model provider caps how many words (tokens) each model accepts per minute and per day. Background
+verification would happily use all of it, leaving a waiting researcher stuck in a queue. So the quota is divided:
+background work may use at most 60% of each minute's allowance, and the rest is reserved for live searches.</p>
+</div>
+<p><strong>The maths.</strong> For a model with a per-minute limit <span class="arithmatex">\(L\)</span>, the most a role may use in any minute is</p>
+<div class="arithmatex">\[
+\text{cap}_{\text{role}} \;=\; L \times s \times
+\begin{cases}
+1.0 &amp; \text{live searches}\\
+0.6 &amp; \text{background verification}
+\end{cases}
+\]</div>
+<p>where <span class="arithmatex">\(s = 0.85\)</span> is a safety factor that keeps retries and rough token estimates from tipping usage over the
+provider's limit. Daily budgets are split by
+role in the same way over a rolling 24-hour window.</p>
+<p><strong>The consequence.</strong> Verification speed is set by free quotas, not computing power, which is why the verified library
+grows by tens of programmes a day. See <a href="../models/#working-within-free-tier-limits">Models and resources</a>.</p>
+<hr />
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>If you want…</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The evidence for each method</td>
+<td>The layer pages: <a href="../layer0/">0</a> · <a href="../layer1/">1</a> · <a href="../layer2/">2</a> · <a href="../layer3/">3</a></td>
+</tr>
+<tr>
+<td>All measurements in one place</td>
+<td><a href="../../results/">Results</a> and the <a href="../../test-report/">test report</a></td>
+</tr>
+<tr>
+<td>A term explained</td>
+<td>The <a href="../../glossary/">glossary</a></td>
+</tr>
+<tr>
+<td>The research behind the choices</td>
+<td>The <a href="../literature/">literature review</a> and <a href="../../references/">references</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Documentation overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Documentation overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../literature/" class="md-footer__link md-footer__link--next" aria-label="Next: Literature review">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Literature review
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GP8000 / GP8001 AI Literacy · Cohort C · Group 5<br> This site records anonymous visit counts (GoatCounter). No cookies are used and no personal data is stored.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

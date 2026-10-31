@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -490,6 +492,8 @@
       
         
       
+        
+      
     
     
     
@@ -545,6 +549,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works, explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -993,6 +1025,10 @@
 <p>Layer 2 answers two separate questions: <em>which programmes are relevant to this researcher?</em> and <em>which of them is
 the researcher eligible for?</em> The first is a search problem; the second is a logic problem. They are handled by
 different methods on purpose.</p>
+<div class="admonition tip">
+<p class="admonition-title">The maths behind this layer</p>
+<p>Plain-language explanations, equations and worked examples: <a href="../explained/#2-keyword-search-bm25"><abbr title="A standard keyword-search formula that weights rare words more than common ones">BM25</abbr></a>, <a href="../explained/#3-combining-two-rankings-reciprocal-rank-fusion">rank fusion</a>, <a href="../explained/#5-eligibility-as-logic-the-gate">the eligibility gate</a> and <a href="../explained/#11-how-search-quality-is-measured-recallk-and-mrr">recall@k and <abbr title="Mean reciprocal rank: rewards putting the correct answer near the top">MRR</abbr></a>.</p>
+</div>
 <h2 id="research-matcher-hybrid-search">Research matcher: hybrid search<a class="headerlink" href="#research-matcher-hybrid-search" title="Permanent link">&para;</a></h2>
 <p><strong>What it does.</strong> Retrieves the programmes most relevant to the researcher's interests from the whole library.</p>
 <p><strong>Method.</strong> Two searches are combined:</p>
@@ -1224,6 +1260,12 @@ funding pages seldom state numeric thresholds: a minimum GPA appears in 17 of 59
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>
