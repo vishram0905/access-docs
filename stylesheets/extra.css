@@ -167,3 +167,11 @@
 /* Footer in the site's navy rather than the theme's default grey */
 .md-footer { background: #1B2A3A; }
 .md-footer-meta { background: #142030; }
+
+/* About page: explainer video */
+.video-frame { border-radius: 16px; overflow: hidden; border: 1px solid var(--access-border); background: #FDFCF8;
+               box-shadow: 0 24px 50px -24px rgba(27, 42, 58, .35); margin: 1rem 0 .6rem; }
+.video-frame video { display: block; width: 100%; height: auto; }
+.video-caption { font-size: .74rem; color: var(--access-muted); margin-top: 0; }
+.about-cards { margin: 1rem 0 1.4rem; }
+.md-typeset .about-cards h3 { margin-top: 0; }
